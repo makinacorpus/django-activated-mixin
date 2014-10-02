@@ -56,3 +56,11 @@ LICENSE
 =======
 
 * GPLv3+
+
+========
+SEE ALSO
+========
+
+`django-safedelete`_
+
+.. _django-safedelete: https://github.com/makinacorpus/django-safedelete
