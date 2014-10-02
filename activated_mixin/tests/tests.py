@@ -41,6 +41,19 @@ class MixinTestCase(TestCase):
         self.assertEqual(SubModelTest.actives.all().count(), 0)
         self.assertFalse(submodel.activated)
 
+    def test_managers(self):
+        """ Test managers """
+        SubModelTest.objects.create()
+        submodel = SubModelTest.objects.last()
+        self.assertEqual(SubModelTest.objects.all().count(), 1)
+        self.assertEqual(SubModelTest.actives.all().count(), 1)
+        self.assertEqual(SubModelTest.objects.get_actives().all().count(), 1)
+        ModelTest.objects.create(related=submodel)
+        submodel.delete()
+        self.assertEqual(SubModelTest.objects.all().count(), 1)
+        self.assertEqual(SubModelTest.actives.all().count(), 0)
+        self.assertEqual(SubModelTest.objects.get_actives().all().count(), 0)
+
 
 class AdminTestCase(TestCase):
     def setUp(self):

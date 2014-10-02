@@ -7,11 +7,7 @@ def highlight_deactivated(obj):
     """
         Display in red lines where object is deactivated (i.e. activated=False)
     """
-    if issubclass(obj.__class__, AbstractUser):
-        attr = 'is_active'
-    else:
-        attr = 'activated'
-    if getattr(obj, attr):
+    if getattr(obj, 'activated', True):
         return obj
     else:
         return '<em style="color:#ff3e3e; font-weight:normal">{}</em>'\
