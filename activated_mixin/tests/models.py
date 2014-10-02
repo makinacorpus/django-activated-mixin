@@ -12,3 +12,6 @@ class SubModelTest(ActivatedMixin):
 
     def __unicode__(self):
         return '{}'.format(self.identifier)
+
+    def __str__(self):
+        return self.__unicode__()
