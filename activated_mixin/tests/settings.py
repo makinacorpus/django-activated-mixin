@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'activated_mixin',
+    'activated_mixin.tests',
 )
 
 MIDDLEWARE_CLASSES = (

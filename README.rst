@@ -17,7 +17,7 @@ Quick start
 
 1. Add "activated_mixin" to your INSTALLED_APPS settings.
 
-2. Add the `activated_mixin.models.ActivatedMixin` mixin to your models, don't forget to set `on_delete` to `PROTECTED`::
+2. Add the `activated_mixin.models.ActivatedMixin` mixin to your models, don't forget to set `on_delete` to `PROTECT`::
 
      class MyModel(models.Model):
          related_object = models.ForeignKey('RelatedModel', on_delete=models.PROTECTED)
